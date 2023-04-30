@@ -23,17 +23,17 @@ pip install pygame==2.1.2 # dont 2.3.0, will cause problem!
 * Replica, [Minimal difference to the data in NICE-SLAM. I will upload it somewhere.]
 
 **How to use**
-* online learn the NSLF alongside Di-Fusion
+##### 1. online learn the NSLF alongside Di-Fusion
 ```
 python nslf_ol.py [config.yaml]
 ```
 Note that:
-1. First time run will cause some time to compile cpp/cuda code, please use `ps` or `top` to find. Afterwards would be fast!
-2. We also provide `_nosurface.py` for only nslf and `multiGPU.py` for multiple GPUs.
+* First time run will cause some time to compile cpp/cuda code, please use `ps` or `top` to find. Afterwards would be fast!
+* We also provide `_nosurface.py` for only nslf and `multiGPU.py` for multiple GPUs.
 
 
 
-* visualization with same config
+##### 2. visualization with same config
 ```
 python vr.py [config.yaml]
 ```
