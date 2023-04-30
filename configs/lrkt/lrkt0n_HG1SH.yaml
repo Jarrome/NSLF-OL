@@ -1,0 +1,79 @@
+# Sequence parameters
+sequence_type: "icl_nuim.ICLNUIMSequence"
+
+sequence_kwargs:
+  #path: "/media/yijun/2021/dataset/ICL_NUIM/lr_kt0n" #"../lr_kt0_noise"
+  #path: "/media/yijun/Yijun/ICL_NUIM/lr_kt0n"
+  path: "/mnt/data/yijun/icl/lrkt0n/"
+  start_frame: 0
+  end_frame: -1                                       # Run all frames
+  first_tq: [-1.4, 1.5, 1.5, 0.0, -1.0, 0.0, 0.0]     # Starting pose
+  load_gt: True
+  mesh_gt: ''
+
+# Network parameters (network structure, etc. will be inherited from the training config)
+training_hypers: "ckpt/default/hyper.json"
+using_epoch: 300
+
+# Separate tracking and meshing.
+run_async: true
+# Enable visualization
+vis: false
+resolution: 4
+
+# These two define the range of depth observations to be cropped. Unit is meter.
+depth_cut_min: 0.5
+depth_cut_max: 5.0
+
+meshing_interval: 20
+integrate_interval: 20
+color_integrate_interval: 20
+
+# Mapping parameters
+mapping:
+  # Bound of the scene to be reconstructed
+  bound_min: [-3.5, -0.5, -2.5]
+  bound_max: [4.5, 3.5, 5.5]
+  voxel_size: .1
+  # Prune observations if detected as noise.
+  prune_min_vox_obs: 16
+  ignore_count_th: 16.0
+  encoder_count_th: 600.0
+
+
+  optim_n_iters: 1500
+# Mapping parameters
+color_mapping:
+  # Bound of the scene to be reconstructed
+  bound_min: [-3.5, -3.5, -2.5]
+  bound_max: [4.5, 4.5, 5.5]
+  voxel_size: 4. # for hashgrid # 2. for TensoRF
+  # Prune observations if detected as noise.
+  prune_min_vox_obs: 16
+  ignore_count_th: 16.0
+  encoder_count_th: 600.0
+
+  mapping_model: "HG1SH"
+outdir: "./outdir/HG1SH/icl/lrkt0n/"
+
+
+# Tracking parameters
+tracking:
+  # An array defining how the camera pose is optimized.
+  # Each element is a dictionary:
+  #   For example {"n": 2, "type": [['sdf'], ['rgb', 1]]} means to optimize the summation of sdf term and rgb term
+  # at the 1st level pyramid for 2 iterations.
+  iter_config:
+    - {"n": 10, "type": [['rgb', 2]]}
+    - {"n": 10, "type": [['sdf'], ['rgb', 1]]}
+    - {"n": 50, "type": [['sdf'], ['rgb', 0]]}
+  sdf:
+    robust_kernel: "huber"
+    robust_k: 5.0
+    subsample: 0.5
+  rgb:
+    weight: 500.0
+    robust_kernel: null
+    robust_k: 0.01
+    min_grad_scale: 0.0
+    max_depth_delta: 0.2
