@@ -58,6 +58,8 @@ python vr.py configs/replica/replica_office0.yaml
 2. Currently we only support visualization after training. But I'm on it. I will find a time to realize on train visualization!
 3. An easy to use nslf API to work in other reconstruction models.
 
+Code contribute to this repository is always welcome!
+
 ## Acknowledgement
 This project is on top of [Di-Fusion](https://github.com/huangjh-pub/di-fusion) from Jiahui Huang, [torch-ngp](https://github.com/ashawkey/torch-ngp) from Jiaxiang Tang. We thank for the open release of those contribution.
 
