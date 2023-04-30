@@ -46,6 +46,9 @@ python vr.py configs/replica/replica_office0.yaml
 1. Add data
 2. Currently we only support visualization after training. But I'm on it. I will find a time to realize on train visualization!
 
+## Acknowledgement
+This project is on top of [Di-Fusion](https://github.com/huangjh-pub/di-fusion) from Jiahui Huang, [torch-ngp](https://github.com/ashawkey/torch-ngp) from Jiaxiang Tang. We thank for the open release of those contribution.
+
 ## Citation
 If you find this code or paper helpful, please cite:
 ```bibtex
