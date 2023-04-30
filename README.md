@@ -27,14 +27,25 @@ pip install pygame==2.1.2 # dont 2.3.0, will cause problem!
 ```
 python nslf_ol.py [config.yaml]
 ```
-First time run will cause some time to compile cpp/cuda code, please use `ps` or `top` to find. Afterwards would be fast!
+Note that:
+1. First time run will cause some time to compile cpp/cuda code, please use `ps` or `top` to find. Afterwards would be fast!
+2. We also provide `_nosurface.py` for only nslf and `multiGPU.py` for multiple GPUs.
+
+
 
 * visualization with same config
 ```
 python vr.py [config.yaml]
 ```
+Please use keyboard
+```
+****w*****    ****^*****
+**a*s*d***    ****|***** 
+**********    <--*v*-->*
+```
+for turning and moving!
 
-Note that, we also provide `_nosurface.py` for only nslf and `multiGPU.py` for multiple GPUs.
+
 
 **Demo**
 ```
