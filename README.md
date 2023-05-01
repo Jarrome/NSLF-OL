@@ -30,7 +30,7 @@ pip install pygame==2.1.2 # dont 2.3.0, will cause problem!
 python nslf_ol.py [config.yaml]
 ```
 Note that:
-* [config.yaml] examples are located in `./configs/`
+* `[config.yaml]` examples are located in `./configs/`
 * First time run will cause some time to compile cpp/cuda code, please use `ps` or `top` to find. Afterwards would be fast!
 * We also provide `_nosurface.py` for only nslf and `multiGPU.py` for multiple GPUs.
 
