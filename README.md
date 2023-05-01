@@ -20,7 +20,7 @@ pip install pygame==2.1.2 # dont 2.3.0, will cause problem!
 ## Quick run
 **Prepare data**
 * [ICL-NUIM](https://www.doc.ic.ac.uk/~ahanda/VaFRIC/iclnuim.html), for example, [lrkt0n](http://www.doc.ic.ac.uk/~ahanda/living_room_traj0n_frei_png.tar.gz)
-* Replica, [Minimal difference to the data in NICE-SLAM. I will upload it somewhere.]
+* [Replica](https://github.com/cvg/nice-slam/blob/master/scripts/download_replica.sh)
 
 **How to use**
 ##### 1. online learn the NSLF alongside Di-Fusion
