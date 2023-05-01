@@ -209,11 +209,11 @@ class ReplicaRGBDDataset(object):
 
 
         if not register:
-            rgb_ids, rgb_timestamps = self.listdir(path, 'rgb', ext='.jpg')
-            depth_ids, depth_timestamps = self.listdir(path, 'depth')
+            rgb_ids, rgb_timestamps = self.listdir(path, '', ext='.jpg')
+            depth_ids, depth_timestamps = self.listdir(path, '')
         else:
-            rgb_imgs, rgb_timestamps = self.listdir(path, 'rgb', ext='.jpg')
-            depth_imgs, depth_timestamps = self.listdir(path, 'depth')
+            rgb_imgs, rgb_timestamps = self.listdir(path, '', ext='.jpg')
+            depth_imgs, depth_timestamps = self.listdir(path, '')
             
             interval = (rgb_timestamps[1:] - rgb_timestamps[:-1]).mean() * 2/3
             matrix = np.abs(rgb_timestamps[:, np.newaxis] - depth_timestamps)
