@@ -33,22 +33,23 @@ Note that:
 * `[config.yaml]` examples are located in `./configs/`
 * First time run will cause some time to compile `c/cuda` code, please use `ps` or `top` to find. Afterwards would be fast!
 * It will open a **pygame** window for visualization
-Please use keyboard
+
+*Please use keyboard*
 ```
 ****w*****    ****^*****
 **a*s*d***    ****|***** 
 **********    <--*v*-->*
 ```
-for turning and moving!
+*for turning and moving!*
 
-(pygame view will only change when keyboard control is raised.)
+*(pygame view will only change once keyboard control is raised.)*
 * vis during train now only support non-thread inference. 
 
 #### 1.2.2 Online learning without vis
 ```
 python nslf_ol.py [config.yaml]
 ```
-* We also provide `_nosurface.py` for only nslf and `multiGPU.py` for multiple GPUs.
+* We also provide `_nosurface.py` for only nslf and `_multiGPU.py` for multiple GPUs.
 
 
 #### 1.2.3 Vis after train
