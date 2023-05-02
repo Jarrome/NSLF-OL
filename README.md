@@ -25,13 +25,13 @@ pip install pygame==2.1.2 # dont 2.3.0, will cause problem!
 pip install open3d numba opencv-python trimesh
 ```
 
-## 1 Prepare data
+## 1. Prepare data
 * [ICL-NUIM](https://www.doc.ic.ac.uk/~ahanda/VaFRIC/iclnuim.html), for example, [lrkt0n](http://www.doc.ic.ac.uk/~ahanda/living_room_traj0n_frei_png.tar.gz)
 * [Replica](https://github.com/cvg/nice-slam/blob/master/scripts/download_replica.sh)
 
 *Please edit the sequence path in `[config.yaml]` correspondingly!*
 
-## 2 How to use
+## 2. How to use
 ### 2.1 Online learn the NSLF alongside Di-Fusion
 ```
 python nslf_ol_vr.py [config.yaml]
@@ -67,7 +67,7 @@ python vr.py [config.yaml]
 * vis after train support multi-thread inference. Thus ought to be supper fast
 
 
-## 3 Demo
+## 3. Demo
 ```
 python nslf_ol_vr.py configs/replica/replica_office0.yaml
 ```
@@ -84,10 +84,10 @@ python vr.py configs/replica/replica_office0.yaml
 
 Code contribute to this repository is always welcome!
 
-## 5. Acknowledgement
+## Acknowledgement
 This project is on top of [Di-Fusion](https://github.com/huangjh-pub/di-fusion) from Jiahui Huang, [torch-ngp](https://github.com/ashawkey/torch-ngp) from Jiaxiang Tang. We thank for the open release of those contribution.
 
-## 6. Citation
+## Citation
 If you find this code or paper helpful, please cite:
 ```bibtex
 @article{yuan2023online,
@@ -99,5 +99,5 @@ If you find this code or paper helpful, please cite:
 }
 ```
 
-## 5. Contact
+## Contact
 Feel free to contact Yijun for any questions or comments. :D
