@@ -79,7 +79,7 @@ python vr.py configs/replica/replica_office0.yaml
 
 ## 4. TODO
 - [x] Add data demo
-- [x] Currently we only support visualization after training. But I'm on it. I will find a time to realize on train visualization!
+- [x] Realize on-train visualization!
 - [ ] An easy to use nslf API to work in other reconstruction models.
 
 Code contribute to this repository is always welcome!
