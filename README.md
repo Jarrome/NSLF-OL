@@ -25,15 +25,14 @@ pip install pygame==2.1.2 # dont 2.3.0, will cause problem!
 pip install open3d numba opencv-python trimesh
 ```
 
-## 1. Quick run
-### 1.1 Prepare data
+## 1 Prepare data
 * [ICL-NUIM](https://www.doc.ic.ac.uk/~ahanda/VaFRIC/iclnuim.html), for example, [lrkt0n](http://www.doc.ic.ac.uk/~ahanda/living_room_traj0n_frei_png.tar.gz)
 * [Replica](https://github.com/cvg/nice-slam/blob/master/scripts/download_replica.sh)
 
 *Please edit the sequence path in `[config.yaml]` correspondingly!*
 
-### 1.2 How to use
-#### 1.2.1 Online learn the NSLF alongside Di-Fusion
+## 2 How to use
+### 2.1 Online learn the NSLF alongside Di-Fusion
 ```
 python nslf_ol_vr.py [config.yaml]
 ```
@@ -54,21 +53,21 @@ Note that:
 *(pygame view will only change once keyboard control is raised.)*
 * vis during train now only support non-thread inference. 
 
-#### 1.2.2 Online learning without vis
+### 2.2 Online learning without vis
 ```
 python nslf_ol.py [config.yaml]
 ```
 * We also provide `_nosurface.py` for only nslf and `_multiGPU.py` for multiple GPUs.
 
 
-#### 1.2.3 Vis after train
+### 2.3 Vis after train
 ```
 python vr.py [config.yaml]
 ```
 * vis after train support multi-thread inference. Thus ought to be supper fast
 
 
-### 1.3 Demo
+## 3 Demo
 ```
 python nslf_ol_vr.py configs/replica/replica_office0.yaml
 ```
@@ -78,17 +77,17 @@ python nslf_ol.py configs/replica/replica_office0.yaml
 python vr.py configs/replica/replica_office0.yaml
 ```
 
-## 2. TODO
+## 4. TODO
 - [x] Add data demo
 - [x] Currently we only support visualization after training. But I'm on it. I will find a time to realize on train visualization!
 - [ ] An easy to use nslf API to work in other reconstruction models.
 
 Code contribute to this repository is always welcome!
 
-## 3. Acknowledgement
+## 5. Acknowledgement
 This project is on top of [Di-Fusion](https://github.com/huangjh-pub/di-fusion) from Jiahui Huang, [torch-ngp](https://github.com/ashawkey/torch-ngp) from Jiaxiang Tang. We thank for the open release of those contribution.
 
-## 4. Citation
+## 6. Citation
 If you find this code or paper helpful, please cite:
 ```bibtex
 @article{yuan2023online,
