@@ -6,6 +6,10 @@ This repository contains the implementation of our **RAL 2023** paper: **Online 
 
 [Preprint](http://arxiv.org/abs/2305.00282) |  [website](https://jarrome.github.io/NSLF-OL/)
 
+
+<p align="left">
+  <img src="./media/office0.gif" alt="vis during traning" />
+</p>
 ---
 
 ## 0. Install
