@@ -11,7 +11,7 @@ This repository contains the implementation of our **RAL 2023** paper: **Online 
   <img src="./media/office0.gif" alt="vis during traning" />
 </p>
 
-*Come [here](https://github.com/Jarrome/NSLF-OL#13-demo) to get this demo.*
+*Come [here](https://github.com/Jarrome/NSLF-OL#3-demo) to get this demo.*
 
 ---
 
