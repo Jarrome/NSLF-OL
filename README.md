@@ -1,6 +1,8 @@
-# [[NSLF-OL] Online Learning of Neural Surface Light Fields alongside Real-time Incremental 3D Reconstruction](https://jarrome.github.io/NSLF-OL/)
+# NSLF-OL
 
-This repository contains the implementation of our **RAL 2023** paper: **Online Learning of Neural Surface Light Fields alongside Real-time Incremental 3D Reconstruction**.
+This repository contains the implementation of our **RAL 2023** paper: 
+
+<ins>**Online Learning** of **Neural Surface Light Fields** alongside Real-time Incremental **3D Reconstruction**</ins>
 
 [Yijun Yuan](https://jarrome.github.io/), [Andreas Nüchter](https://www.informatik.uni-wuerzburg.de/space/mitarbeiter/nuechter/)
 
@@ -40,7 +42,6 @@ Note that:
 * `[config.yaml]` examples are located in `./configs/`
 * First time run will cause some time to compile `c/cuda` code, please use `ps` or `top` to find. Afterwards would be fast!
 * It will open a **pygame** window for visualization (`240x320` by default, feel free to edit it in `nslf_ol_vr.py:L137`)
-)
 
 *Please use keyboard*
 ```
