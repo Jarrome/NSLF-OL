@@ -2,7 +2,7 @@
 
 This repository contains the implementation of our **RAL 2023** paper: 
 
-<ins>**Online Learning** of **Neural Surface Light Fields** alongside Real-time Incremental **3D Reconstruction**</ins>
+**Online Learning** of **Neural Surface Light Fields** alongside Real-time Incremental **3D Reconstruction**
 
 [Yijun Yuan](https://jarrome.github.io/), [Andreas Nüchter](https://www.informatik.uni-wuerzburg.de/space/mitarbeiter/nuechter/)
 
