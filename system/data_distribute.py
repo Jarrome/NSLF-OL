@@ -222,14 +222,14 @@ def eval_once(imp, pose_, calib, depth_im, device):
     cv2.imshow("image", color)
     cv2.waitKey(1)
 
-def vis_once(imp, pose, xyz, device):
+def vis_once(imp, pose, xyz, device, vr_along_train=False):
     ds = xyz-torch.from_numpy(pose[:3,(3,)].T).to(xyz)
     ds /= torch.norm(ds+1e-8,dim=1,keepdim=True)
-    color = get_color(imp, (xyz, ds), None, device, opt=False, iter_nm=1)
 
-    # for AFFM, the async inf run out of memory
-    #color = get_color_nonthread(imp, (xyz, ds), None, device, opt=False, iter_nm=1)
-
+    if not vr_along_train:
+        color = get_color(imp, (xyz, ds), None, device, opt=False, iter_nm=1)
+    else:
+        color = get_color_nonthread(imp, (xyz, ds), None, device, opt=False, iter_nm=1)
     return color
 
 

@@ -242,7 +242,7 @@ class DenseIndexedMap:
 
 
 
-    def integrate_keyframe(self, surface_xyz, surface_normal, do_optimize: bool = False, async_optimize: bool = False, info = None):
+    def integrate_keyframe(self, surface_xyz, surface_normal, do_optimize: bool = False, async_optimize: bool = False, info = None, vr_along_train=False):
         """
         :param surface_xyz:  (N, 3) x, y, z
         :param surface_normal: (N, 3) nx, ny, nz
@@ -285,7 +285,7 @@ class DenseIndexedMap:
         elif depth is not None:
             eval_once(self, pose.matrix, calib, depth, self.device)
         else:# use surface_xyz and no color
-            return vis_once(self, pose, surface_xyz, self.device)
+            return vis_once(self, pose, surface_xyz, self.device, vr_along_train)
         #print('b', time()-st)
         
     def _make_mesh_from_cache(self):
