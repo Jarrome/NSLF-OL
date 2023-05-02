@@ -18,9 +18,9 @@ def feed_data(data):
         mask = inverse_indices == id
 
         if is_train:
-            imp.nerfs[voxel_ids[id].item()].add_data(d_xyz[mask,:], ds_flat[mask,:],rgb[mask,:],is_train)
+            imp.nslfs[voxel_ids[id].item()].add_data(d_xyz[mask,:], ds_flat[mask,:],rgb[mask,:],is_train)
         else:
-            imp.nerfs[voxel_ids[id].item()].add_data(d_xyz[mask,:], ds_flat[mask,:],None,is_train)
+            imp.nslfs[voxel_ids[id].item()].add_data(d_xyz[mask,:], ds_flat[mask,:],None,is_train)
 
 def infer_data(data):
     imp, voxel_ids, inverse_indices, id, d_xyz, ds_flat, rgb, is_train = data
@@ -30,14 +30,14 @@ def infer_data(data):
         if is_train:
             assert False, 'only test'
         else:
-            pred = imp.nerfs[voxel_ids[id].item()].eval_w_input(d_xyz[mask,:], ds_flat[mask,:])
+            pred = imp.nslfs[voxel_ids[id].item()].eval_w_input(d_xyz[mask,:], ds_flat[mask,:])
         return pred
 
 
 @background
 def feed_iter(data):
     imp, key, iter_nm = data
-    imp.nerfs[key].set_iters(iter_nm)
+    imp.nslfs[key].set_iters(iter_nm)
 
 
 def get_color_nonthread(imp, xyzn, rgb, device, opt=True, iter_nm=5):
@@ -103,18 +103,18 @@ def get_color(imp, xyzn, rgb, device, opt=True, iter_nm=5):
             if imp.indexer[voxel_ids[id]] == -1:
                 continue
             mask = inverse_indices == id
-            imp.nerfs[voxel_ids[id].item()].add_data(d_xyz[mask,:], ds_flat[mask,:],rgb[mask,:])
+            imp.nslfs[voxel_ids[id].item()].add_data(d_xyz[mask,:], ds_flat[mask,:],rgb[mask,:])
             '''
         #print('cd', time()-st)
 
         if rgb is not None:
             # always add iters for the few trained voxels
-            counts = [imp.nerfs[nf_key].trained_iters for nf_key in imp.nerfs.keys()]
+            counts = [imp.nslfs[nf_key].trained_iters for nf_key in imp.nslfs.keys()]
 
             #print(counts)
-            #print(imp.nerfs.keys())
+            #print(imp.nslfs.keys())
             #idx = np.argsort(counts)
-            keys = list(imp.nerfs.keys())
+            keys = list(imp.nslfs.keys())
             idx = np.arange(len(counts))
             print("keys",keys)
             print("counts",counts)
@@ -146,8 +146,8 @@ def get_color(imp, xyzn, rgb, device, opt=True, iter_nm=5):
             '''
             #print('keys',keys)
             print(good_keys)
-            for key in good_keys:#imp.nerfs.keys():
-                #imp.nerfs[key].add_iters(10)
+            for key in good_keys:#imp.nslfs.keys():
+                #imp.nslfs[key].add_iters(10)
                 feed_iter((imp, key, 100)) # 100 works well on icl and replica
     #print('d', time()-st)
             print(bad_keys)
@@ -171,10 +171,10 @@ def get_color(imp, xyzn, rgb, device, opt=True, iter_nm=5):
             mask = inverse_indices == id
             if voxel_ids[id].item() < 0: 
                 continue
-            while imp.nerfs[voxel_ids[id].item()].pred is None:
+            while imp.nslfs[voxel_ids[id].item()].pred is None:
                 sleep(.01)
-            pred = imp.nerfs[voxel_ids[id].item()].pred.detach().float()
-            imp.nerfs[voxel_ids[id].item()].pred = None
+            pred = imp.nslfs[voxel_ids[id].item()].pred.detach().float()
+            imp.nslfs[voxel_ids[id].item()].pred = None
             c_is[mask,:] = pred
         return c_is  
     #print('e', time()-st)
