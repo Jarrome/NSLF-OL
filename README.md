@@ -10,6 +10,9 @@ This repository contains the implementation of our **RAL 2023** paper: **Online 
 <p align="left">
   <img src="./media/office0.gif" alt="vis during traning" />
 </p>
+
+*Come [here](https://github.com/Jarrome/NSLF-OL/edit/master/README.md#13-demo) to get this demo.*
+
 ---
 
 ## 0. Install
@@ -36,7 +39,8 @@ python nslf_ol_vr.py [config.yaml]
 Note that:
 * `[config.yaml]` examples are located in `./configs/`
 * First time run will cause some time to compile `c/cuda` code, please use `ps` or `top` to find. Afterwards would be fast!
-* It will open a **pygame** window for visualization
+* It will open a **pygame** window for visualization (`240x320` by default, feel free to edit it in `nslf_ol_vr.py:L137`)
+)
 
 *Please use keyboard*
 ```
