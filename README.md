@@ -13,6 +13,8 @@ This repository contains the implementation of our **RAL 2023** paper:
   <img src="./media/office0.gif" alt="vis during traning" />
 </p>
 
+_**Di-Fusion**'s reconstruction + **NSLF-OL**'s surface light fields_ 
+
 *Come [here](https://github.com/Jarrome/NSLF-OL#3-demo) to get this demo.*
 
 ---
